@@ -1,7 +1,7 @@
 %define		_modname	phar
 %define		_status		stable
-Summary:	allows running of complete applications out of .phar files (like Java .jar files)
-Summary(pl.UTF-8):	pozwala na uruchamianie ogtowych aplikacji z plików .phar (podobnych do plików .jar w Javie)
+Summary:	Extension to run complete applications out of .phar files (like Java .jar files)
+Summary(pl.UTF-8):	Rozszerzenie do uruchamianie gotowych aplikacji z plików .phar (podobnych do .jar w Javie)
 Name:		php-pecl-%{_modname}
 Version:	1.2.3
 Release:	1
@@ -39,11 +39,11 @@ are supported as well.
 In PECL status of this extension is: %{_status}.
 
 %description -l pl.UTF-8
-To rozszerzenie to odpowiednik klasy PEAR PHP_Archive. Wsparcie dla
-metod kompresji zlib, bz2 i crc32 zostało osiągnięte bez zależności
-innych niż moduły zlib i bz2.
+To rozszerzenie to odpowiednik klasy PEAR PHP_Archive. Obsługa metod
+kompresji zlib, bz2 i crc32 została osiągnięta bez zależności innych
+niż moduły zlib i bz2.
 
-Pliki .phar mogą być odczytane przy użyciu strumienia phar, lub za
+Pliki .phar mogą być odczytane przy użyciu strumienia phar lub za
 pomocą klasy Phar. Jeśli rozszerzenie SPL jest dostępne, obiekt Phar
 może być użyty jako tablica lub w celu bezpośredniego odczytu plików.
 
@@ -53,7 +53,7 @@ fałsz.
 
 Pełne wsparcie dla skrótów MD5 i SHA1 jest możliwe. Skróty mogą być
 wymagane, jeśli zmienna phar.require_hash ma wartość true. Jeśli
-rozszerzenie PECL hash jest dostępne, możliwe jest także skorzystanie
+rozszerzenie PECL hash jest dostępne, możliwe jest także korzystanie
 ze skrótów SHA-256 oraz SHA-512.
 
 To rozszerzenie ma w PECL status: %{_status}.
