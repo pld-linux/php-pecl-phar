@@ -3,12 +3,12 @@
 Summary:	Extension to run complete applications out of .phar files (like Java .jar files)
 Summary(pl.UTF-8):	Rozszerzenie do uruchamianie gotowych aplikacji z plików .phar (podobnych do .jar w Javie)
 Name:		php-pecl-%{_modname}
-Version:	1.2.3
+Version:	2.0.0
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
-# Source0-md5:	b2b81eebc715044d7793643a626e9d51
+# Source0-md5:	fdba10432216c22c19cf8a86b3de56b9
 URL:		http://pecl.php.net/package/phar/
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
