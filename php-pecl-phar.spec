@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Rozszerzenie do uruchamianie gotowych aplikacji z plików .ph
 Name:		php-pecl-%{_modname}
 Version:	2.0.0
 Release:	1
-License:	PHP 2.02
+License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	fdba10432216c22c19cf8a86b3de56b9
