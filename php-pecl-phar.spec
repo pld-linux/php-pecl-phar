@@ -8,7 +8,7 @@ Release:	2
 License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	3344fc9759a80faac12aa95e4a0436c5
+# Source0-md5:	fdba10432216c22c19cf8a86b3de56b9
 URL:		http://pecl.php.net/package/phar/
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
