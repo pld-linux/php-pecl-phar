@@ -1,14 +1,14 @@
-%define		_modname	phar
-%define		_status		stable
+%define		modname	phar
+%define		status		stable
 Summary:	Extension to run complete applications out of .phar files (like Java .jar files)
 Summary(pl.UTF-8):	Rozszerzenie do uruchamianie gotowych aplikacji z plików .phar (podobnych do .jar w Javie)
-Name:		php-pecl-%{_modname}
+Name:		php-pecl-%{modname}
 Version:	2.0.0
 Release:	1
 License:	PHP 3.01
 Group:		Development/Languages/PHP
-Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
-# Source0-md5:	fdba10432216c22c19cf8a86b3de56b9
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
+# Source0-md5:	3344fc9759a80faac12aa95e4a0436c5
 URL:		http://pecl.php.net/package/phar/
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
@@ -36,7 +36,7 @@ be required if the ini variable phar.require_hash is set to true. When
 PECL extension hash is avaiable then SHA-256 and SHA-512 signatures
 are supported as well.
 
-In PECL status of this extension is: %{_status}.
+In PECL status of this extension is: %{status}.
 
 %description -l pl.UTF-8
 To rozszerzenie to odpowiednik klasy PEAR PHP_Archive. Obsługa metod
@@ -56,13 +56,13 @@ wymagane, jeśli zmienna phar.require_hash ma wartość true. Jeśli
 rozszerzenie PECL hash jest dostępne, możliwe jest także korzystanie
 ze skrótów SHA-256 oraz SHA-512.
 
-To rozszerzenie ma w PECL status: %{_status}.
+To rozszerzenie ma w PECL status: %{status}.
 
 %prep
-%setup -q -c
+%setup -qc
+mv %{modname}-%{version}/* .
 
 %build
-cd %{_modname}-%{version}
 phpize
 %configure
 %{__make}
@@ -72,12 +72,11 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d
 
 %{__make} install \
-	-C %{_modname}-%{version} \
-	INSTALL_ROOT=$RPM_BUILD_ROOT \
-	EXTENSION_DIR=%{php_extensiondir}
-cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_modname}.ini
-; Enable %{_modname} extension module
-extension=%{_modname}.so
+	EXTENSION_DIR=%{php_extensiondir} \
+	INSTALL_ROOT=$RPM_BUILD_ROOT
+cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
+; Enable %{modname} extension module
+extension=%{modname}.so
 EOF
 
 %clean
@@ -93,6 +92,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc %{_modname}-%{version}/{CREDITS,TODO}
-%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{_modname}.ini
-%attr(755,root,root) %{php_extensiondir}/%{_modname}.so
+%doc CREDITS TODO
+%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
+%attr(755,root,root) %{php_extensiondir}/%{modname}.so
